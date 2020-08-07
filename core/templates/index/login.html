@@ -1,6 +1,8 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
@@ -148,7 +150,7 @@ div{
 				</div>
 			</div>
 			<div class="card-body">
-				<form method="POST" action='submit'>{% csrf_token%}
+				<form method="POST" type='submit' action='submit/'>{% csrf_token%}
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -168,7 +170,7 @@ div{
 					<div class='alert alert-danger'>
 						
 						{% for message in messages%}
-						{{message}}
+							{{message}}
 						{% endfor %}
 					</div>
 					<div class="form-group">

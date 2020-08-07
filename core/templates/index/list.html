@@ -1,31 +1,33 @@
 {% extends './model.html'%}
 {% block style%}
 <style>
-        div.polaroid {
-            width: 250px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            text-align: center;
-        }
+
+ 
         div.container {
             padding: 20px;
-        }
+        }   
 
 </style>
 
 
 {% endblock %}
+{% block title %} <title> Pets </title>{% endblock %}
 
 {% block content%}
     <div class="container mb-4">
             <div class="row">
                 {% for p in pet %}
                     <div class="col-sm-4">
-                            <div class="polaroid">
-                                <img src="{{ p.photo.url }}" alt="" style="width:100%">
-                                <div class="container">
-                                    <p>{{ p.city }}</p>
-                                    <p> {{p.user}}</p>
+                        <a href="../detail/{{p.id}}">
+                            <div class="container"> 
+                            <div class="card" style="width:100%"><span class="border border-primary"></span>
+
+                                <img class="card-img-top" src="{{p.photo.url}}" alt="">
+                                <div class="card-body text-center">
+                                  <p class="card-text">{{p.user}}</p>
+                                  <p class="card-text">{{p.description}}</p>
                                 </div>
+                              </div>
                             </div>
                         </a>
                         <br>

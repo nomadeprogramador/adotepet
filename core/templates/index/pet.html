@@ -1,0 +1,31 @@
+{% extends './model.html' %}
+{% block content%}
+
+<h1 class='text-center'> Detalhes</h1>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-sm-4">
+            <div style="border-color:blue; border-style: solid; width: 356px; height: 300px;">
+                <img src="{{ pet.photo.url }}" alt="Norway" width="350" height="260" > 
+            </div>
+            <br>
+        </div>
+        <div class="col-sm-8">
+            <p>{{ pet.description }}</p>
+            <h4>Contato</h4>                     
+            <p><b>Tel.: </b>{{ pet.phone }}</p> 
+            <p><b>E-mail: </b>{{ pet.email }}</p>
+            <p><b>Usuario:</b>{{pet.user}}</p>
+            <p><b>Cidade:</b>{{pet.city}}</p>
+            {% if request.user ==  pet.user%}
+               
+                <a href="/pet/delete/{{pet.id}}/">
+                <button type="button" class="btn btn-warning">Excluir</button>
+                </a>
+            {%endif %}
+                
+        </div>
+    </div>
+
+{% endblock%}
